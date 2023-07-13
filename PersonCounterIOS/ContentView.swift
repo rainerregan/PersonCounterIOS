@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text: String = "String"
+    @State var text: String = "Loading..."
     @EnvironmentObject var firebaseConnectionDelegate: FirebaseConnection
-    var timer = Timer()
     @State var frameNum: Int = 0
     
     func updateData(number: Int) {

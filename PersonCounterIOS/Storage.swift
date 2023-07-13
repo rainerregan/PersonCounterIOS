@@ -32,7 +32,10 @@ class FirebaseConnection: NSObject, UIApplicationDelegate, ObservableObject {
         
         // TODO: Update Camera name
         ref.child("camera_1")
-            .setValue(["person_count": newCountData])
+            .setValue([
+                "person_count": newCountData,
+                "last_updated": [".sv": "timestamp"]
+            ])
         
         print("New count: \(newCountData)")
     }
