@@ -42,16 +42,17 @@ extension ViewController {
             
             if objectObservation.labels.first?.identifier == "person" {
                 personCounter += 1
+                
+                // Transformations
+                let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(screenRect.size.width), Int(screenRect.size.height))
+                
+                let transformBounds = CGRect(x: objectBounds.minX, y: screenRect.size.height - objectBounds.maxY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
+                
+                let boxLayer = self.drawBoundingBox(bounds: transformBounds, label: objectObservation.labels.first?.identifier ?? "nil")
+                
+                detectionLayer.addSublayer(boxLayer)
             }
             
-            // Transformations
-            let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(screenRect.size.width), Int(screenRect.size.height))
-            
-            let transformBounds = CGRect(x: objectBounds.minX, y: screenRect.size.height - objectBounds.maxY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
-            
-            let boxLayer = self.drawBoundingBox(bounds: transformBounds, label: objectObservation.labels.first?.identifier ?? "nil")
-            
-            detectionLayer.addSublayer(boxLayer)
         }
         
         self.delegate?.didNumberUpdated(total: personCounter)
