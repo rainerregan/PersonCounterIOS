@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct PersonCounterIOSApp: App {
+    @UIApplicationDelegateAdaptor(FirebaseConnection.self) var delegate
+    
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
+                .environmentObject(delegate)
         }
     }
 }
