@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var text: String = "String"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+            HostedViewController(){ number in
+                text = String(number)
+            }.ignoresSafeArea()
+            
+            HStack {
+                Text("Number of people: \(text)")
+                    .background(.black)
+                    .font(.title)
+                    .bold()
+            }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        }
     }
 }
