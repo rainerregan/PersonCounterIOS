@@ -23,7 +23,7 @@ struct ContentView: View {
                 text = String(number)
                 
                 // Update Data every 5 seconds
-                if frameNum % 150 == 0 {
+                if frameNum % 60 == 0 {
                     updateData(number: number)
                     frameNum = 0
                 }
