@@ -39,4 +39,18 @@ class FirebaseConnection: NSObject, UIApplicationDelegate, ObservableObject {
         
         print("New count: \(newCountData)")
     }
+    
+    func saveHistory(newCountData: Int) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        // TODO: Update Camera name
+        ref.child("camera_1")
+            .setValue([
+                "person_count": newCountData,
+                "last_updated": [".sv": "timestamp"]
+            ])
+        
+        print("New count: \(newCountData)")
+    }
 }
