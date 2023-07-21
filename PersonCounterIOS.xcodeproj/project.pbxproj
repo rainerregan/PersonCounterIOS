@@ -14,6 +14,10 @@
 		8329051D2A5FCE3400D3413C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329051C2A5FCE3400D3413C /* ViewController.swift */; };
 		8329051F2A5FCE5800D3413C /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329051E2A5FCE5800D3413C /* Detector.swift */; };
 		832905212A5FCE6F00D3413C /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 832905202A5FCE6F00D3413C /* YOLOv3.mlmodel */; };
+		832905232A5FE61C00D3413C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905222A5FE61C00D3413C /* Storage.swift */; };
+		832905252A5FE66B00D3413C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832905242A5FE66B00D3413C /* GoogleService-Info.plist */; };
+		832905282A5FE74500D3413C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 832905272A5FE74500D3413C /* FirebaseDatabase */; };
+		8329052A2A5FE74500D3413C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 832905292A5FE74500D3413C /* FirebaseDatabaseSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,9 @@
 		8329051C2A5FCE3400D3413C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8329051E2A5FCE5800D3413C /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
 		832905202A5FCE6F00D3413C /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3.mlmodel; sourceTree = "<group>"; };
+		832905222A5FE61C00D3413C /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		832905242A5FE66B00D3413C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8329054F2A5FF51E00D3413C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8329052A2A5FE74500D3413C /* FirebaseDatabaseSwift in Frameworks */,
+				832905282A5FE74500D3413C /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +66,7 @@
 		8329050D2A5FCE1400D3413C /* PersonCounterIOS */ = {
 			isa = PBXGroup;
 			children = (
+				8329054F2A5FF51E00D3413C /* Info.plist */,
 				8329050E2A5FCE1400D3413C /* PersonCounterIOSApp.swift */,
 				832905102A5FCE1400D3413C /* ContentView.swift */,
 				832905202A5FCE6F00D3413C /* YOLOv3.mlmodel */,
@@ -64,6 +74,8 @@
 				832905142A5FCE1600D3413C /* Preview Content */,
 				8329051C2A5FCE3400D3413C /* ViewController.swift */,
 				8329051E2A5FCE5800D3413C /* Detector.swift */,
+				832905222A5FE61C00D3413C /* Storage.swift */,
+				832905242A5FE66B00D3413C /* GoogleService-Info.plist */,
 			);
 			path = PersonCounterIOS;
 			sourceTree = "<group>";
@@ -92,6 +104,10 @@
 			dependencies = (
 			);
 			name = PersonCounterIOS;
+			packageProductDependencies = (
+				832905272A5FE74500D3413C /* FirebaseDatabase */,
+				832905292A5FE74500D3413C /* FirebaseDatabaseSwift */,
+			);
 			productName = PersonCounterIOS;
 			productReference = 8329050B2A5FCE1400D3413C /* PersonCounterIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 832905022A5FCE1400D3413C;
+			packageReferences = (
+				832905262A5FE74500D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8329050C2A5FCE1400D3413C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -136,6 +155,7 @@
 			files = (
 				832905162A5FCE1600D3413C /* Preview Assets.xcassets in Resources */,
 				832905132A5FCE1600D3413C /* Assets.xcassets in Resources */,
+				832905252A5FE66B00D3413C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +171,7 @@
 				832905112A5FCE1400D3413C /* ContentView.swift in Sources */,
 				8329050F2A5FCE1400D3413C /* PersonCounterIOSApp.swift in Sources */,
 				8329051F2A5FCE5800D3413C /* Detector.swift in Sources */,
+				832905232A5FE61C00D3413C /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +303,7 @@
 				DEVELOPMENT_TEAM = 8B7DH7AN2U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PersonCounterIOS/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app will use camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -312,6 +334,7 @@
 				DEVELOPMENT_TEAM = 8B7DH7AN2U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PersonCounterIOS/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app will use camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -353,6 +376,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		832905262A5FE74500D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		832905272A5FE74500D3413C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 832905262A5FE74500D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		832905292A5FE74500D3413C /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 832905262A5FE74500D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 832905032A5FCE1400D3413C /* Project object */;
 }

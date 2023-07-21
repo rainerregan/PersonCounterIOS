@@ -88,7 +88,7 @@ class ViewController : UIViewController, AVCaptureVideoDataOutputSampleBufferDel
     }
     
     func setupCaptureSession() {
-        guard let videoDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let videoDevice = AVCaptureDevice.default(.builtInUltraWideCamera, for: .video, position: .back) else { return }
         guard let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice) else {return}
         
         guard captureSession.canAddInput(videoDeviceInput) else {return}
